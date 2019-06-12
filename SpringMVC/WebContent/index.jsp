@@ -7,7 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="springmvc/testMapping">testMapping</a>
+	<a href="springmvc/testVariable/123">test Variable</a>
+<br>
+<a href="springmvc/testParams?username=1&age=12">test params</a>
+<br>
+	<a href="springmvc/testMapping">testMapping</a><br>
 	<a href="hello">Hello World</a>
 </body>
 </html>
