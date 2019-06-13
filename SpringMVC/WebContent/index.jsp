@@ -7,7 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<form action="springmvc/testRequestParams" method="post">
+		<input type="text" name="username" value="123" />
+		<input type="password" name="password" value="" />
+		<input type="submit" value="submit"/>
+	</form>
+	
+	<br>
+	
 	<form action="springmvc/testHiddedMethod/ei" method="post">
 		<input type="hidden" name="_method" value="delete" />
 		<input type="submit" value="testDelete"/>
