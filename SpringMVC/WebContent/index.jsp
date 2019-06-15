@@ -7,6 +7,18 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<a href="springmvc/testModelAndView">test Model</a>
+	<br><br>
+
+	<form action="springmvc/testPojo" method="post">
+		userName:<input type="text" name="userName" value="lqk" /><br>
+		email:<input type="text" name="email" value="" /><br>
+		country:<input type="text" name="address.country" value="" /><br>
+		city:<input type="text" name="address.city" value="" /><br>
+		<input type="submit" value="submit"/>
+	</form>
+	
+	<br>
 	<form action="springmvc/testRequestParams" method="post">
 		<input type="text" name="username" value="123" />
 		<input type="password" name="password" value="" />

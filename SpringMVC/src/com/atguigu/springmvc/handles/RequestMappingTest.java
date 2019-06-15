@@ -7,13 +7,30 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.atguigu.springmvc.entitys.User;
 
 @RequestMapping("/springmvc")
 @Controller
 public class RequestMappingTest {
 
 	public static final String SUCCESS = "success";
-
+	
+	@RequestMapping(value="testModelAndView")
+	public ModelAndView testModelAndView(){
+		ModelAndView m = new ModelAndView();
+		m.setViewName(SUCCESS);
+		m.addObject("time",new java.util.Date());
+		return m;
+		
+	}
+	
+	@RequestMapping(value="/testPojo")
+	public String testPojo(User user){
+		System.out.println(user);
+		return SUCCESS;
+	}
 	@RequestMapping("/testRequestParams")
 	public String testRequestHeader(@CookieValue(value = "JSESSIONID") String session,
 			@RequestHeader(value = "Accept-Encoding") String encode,
