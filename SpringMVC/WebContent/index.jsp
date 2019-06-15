@@ -7,7 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="springmvc/testModelAndView">test Model</a>
+
+	<a href="springmvc/testSessionAttributes">test SessionAttributes</a>
+	<br><br>
+	<a href="springmvc/testMap">test testMap</a>
+	<br><br>
+	<a href="springmvc/testModelAndView">test ModelAndView</a>
 	<br><br>
 
 	<form action="springmvc/testPojo" method="post">

@@ -9,5 +9,19 @@
 <body>
 	<h4>success page</h4>
 	time : ${requestScope.time }
+	<br>
+	map: ${requestScope.names }
+	
+	<br>
+	requestUser: ${requestScope.user }
+	<br>
+	sessionUser: ${sessionScope.user }
+	<br>
+	requestaddress: ${requestScope.address }
+	<br>
+	sessionaddress: ${sessionScope.address }
+	<br>
+	sessionSchool: ${sessionScope.School }
+
 </body>
 </html>

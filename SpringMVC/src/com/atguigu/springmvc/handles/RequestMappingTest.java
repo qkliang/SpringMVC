@@ -1,5 +1,8 @@
 package com.atguigu.springmvc.handles;
 
+import java.util.Arrays;
+import java.util.Map;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -7,17 +10,38 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.atguigu.springmvc.entitys.Address;
 import com.atguigu.springmvc.entitys.User;
 
+@SessionAttributes(value={"user","address"})
 @RequestMapping("/springmvc")
 @Controller
 public class RequestMappingTest {
 
 	public static final String SUCCESS = "success";
 	
-	@RequestMapping(value="testModelAndView")
+	@RequestMapping(value="testSessionAttributes")
+	public String SessionAttributes(Map<String,Object> map){
+		User user = new User("Tom", "t@t.com");
+		Address address = new Address();
+		address.setCountry("China");
+		address.setCity("shanghai");
+		map.put("user", user);
+		map.put("address", address);
+		map.put("School","henan");
+		return SUCCESS;
+	}
+	
+	@RequestMapping(value="testMap")
+	public String testMap(Map<String,Object> map){
+		map.put("names", Arrays.asList("tom","jerry"));
+		return SUCCESS;
+		
+	}
+	@RequestMapping(value="/testModelAndView")
 	public ModelAndView testModelAndView(){
 		ModelAndView m = new ModelAndView();
 		m.setViewName(SUCCESS);

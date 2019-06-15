@@ -27,5 +27,10 @@ public class User {
 	public String toString() {
 		return "User [userName=" + userName + ", email=" + email + ", address=" + address + "]";
 	}
+	public User(String userName, String email) {
+		super();
+		this.userName = userName;
+		this.email = email;
+	}
 	
 }
