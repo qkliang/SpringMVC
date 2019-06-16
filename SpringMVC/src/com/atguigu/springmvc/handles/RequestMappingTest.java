@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +24,21 @@ public class RequestMappingTest {
 
 	public static final String SUCCESS = "success";
 	
+	@ModelAttribute
+	public void getUser(@RequestParam(value="id") Integer id
+			,Map<String,Object> map){
+		if(id != null){
+			User user = new User(1, "Tom", "123456", "tom@gy.com");
+			System.out.println("shujuku : " + user);
+			map.put("user", user);
+		}
+	}
+	@RequestMapping(value="/testModelAttribute")
+	public String testModelAttribute(User user){
+
+		System.out.println("xiuygai : " + user);
+		return SUCCESS;
+	}
 	@RequestMapping(value="testSessionAttributes")
 	public String SessionAttributes(Map<String,Object> map){
 		User user = new User("Tom", "t@t.com");
