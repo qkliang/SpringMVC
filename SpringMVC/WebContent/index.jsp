@@ -7,7 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
+	<a href="springmvc/testRediect">test Redirect</a>
+<br>
+	<a href="springmvc/testView">test View</a>
+<br>	
 	<form action="springmvc/testModelAttribute" method="post">
 	<input type="hidden" name="id" value="1"/>
 		<br>

@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.atguigu.springmvc.entitys.Address;
 import com.atguigu.springmvc.entitys.User;
 
+
 @SessionAttributes(value={"user","address"})
 @RequestMapping("/springmvc")
 @Controller
@@ -24,8 +25,18 @@ public class RequestMappingTest {
 
 	public static final String SUCCESS = "success";
 	
+	@RequestMapping(value="/testRediect")
+	public String testRediect(){
+		return "redirect:/index.jsp";
+	}
+	@RequestMapping(value="/testView")
+	public String testView(){
+		System.out.println("testView");
+		return "helloView";
+	}
+	
 	@ModelAttribute
-	public void getUser(@RequestParam(value="id") Integer id
+	public void getUser(@RequestParam(value="id",required = false)  Integer id
 			,Map<String,Object> map){
 		if(id != null){
 			User user = new User(1, "Tom", "123456", "tom@gy.com");
@@ -33,6 +44,7 @@ public class RequestMappingTest {
 			map.put("user", user);
 		}
 	}
+	
 	@RequestMapping(value="/testModelAttribute")
 	public String testModelAttribute(User user){
 
